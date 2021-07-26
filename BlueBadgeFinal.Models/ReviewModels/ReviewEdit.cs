@@ -11,5 +11,6 @@ namespace BlueBadgeFinal.Models.ReviewModels
         public Guid UserId { get; set; }
         public string MovieReview { get; set; }
         public string TheatreReview { get; set; }
+        public int ReviewId { get; set; }
     }
 }

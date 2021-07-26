@@ -11,6 +11,8 @@ namespace BlueBadgeFinal.Models.ReviewModels
         public Guid UserId { get; set; }
         public string MovieReview { get; set; }
         public string TheatreReview { get; set; }
-        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset CreatedUtc { get; set;}
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
     }
 }
