@@ -85,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Movie.cs" />
-    <Compile Include="Entities\Reply.cs" />
+    <Compile Include="Entities\Rating.cs" />
     <Compile Include="Entities\Review.cs" />
     <Compile Include="Entities\Theatre.cs" />
     <Compile Include="IdentityModels.cs" />
