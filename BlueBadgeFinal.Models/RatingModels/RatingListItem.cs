@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlueBadgeFinal.Models.ReplyModels
+namespace BlueBadgeFinal.Models.RatingModels
 {
-    class ReplyCreate
+    class RatingListItem
     {
     }
 }
