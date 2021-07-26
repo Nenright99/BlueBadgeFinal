@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlueBadgeFinal.Data
+namespace BlueBadgeFinal.Data.Entities
 {
-    public class Class1
+    class Class1
     {
     }
 }
