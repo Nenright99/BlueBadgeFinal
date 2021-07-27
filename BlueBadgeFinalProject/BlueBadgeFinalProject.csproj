@@ -306,6 +306,20 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlueBadgeFinal.Data\BlueBadgeFinal.Data.csproj">
+      <Project>{48bc8473-ea2a-47ba-a318-f23da2b8111c}</Project>
+      <Name>BlueBadgeFinal.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlueBadgeFinal.Models\BlueBadgeFinal.Models.csproj">
+      <Project>{d4d104bc-3f91-4c00-8e72-ad84f51ee2a4}</Project>
+      <Name>BlueBadgeFinal.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlueBadgeFinal.Service\BlueBadgeFinal.Service.csproj">
+      <Project>{77d35059-424a-4e81-8fd5-22cb1faae6b9}</Project>
+      <Name>BlueBadgeFinal.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

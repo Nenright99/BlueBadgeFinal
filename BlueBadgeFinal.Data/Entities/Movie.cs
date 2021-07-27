@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinal.Data.Entities
 {
-    class Movie
+  public  class Movie
     {
     }
 }

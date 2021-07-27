@@ -1,15 +1,13 @@
 ﻿using BlueBadgeFinal.Data.Entities;
 using BlueBadgeFinal.Models.ReviewModels;
-using BlueBadgeFinalProject.Models;
+using BlueBadgeFinalProject.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlueBadgeFinal.Service
 {
-   public class ReviewServices
+    public class ReviewServices
     {
         private readonly Guid _userId;
         public ReviewServices(Guid userId)
@@ -69,7 +67,7 @@ namespace BlueBadgeFinal.Service
                     };
             }
         }
-        public bool UpdateComment(ReviewEdit model)
+        public bool UpdateReview(ReviewEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {

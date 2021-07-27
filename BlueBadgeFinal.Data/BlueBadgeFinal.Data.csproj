@@ -89,11 +89,21 @@
     <Compile Include="Entities\Review.cs" />
     <Compile Include="Entities\Theatre.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202107262107235_testing.cs" />
+    <Compile Include="Migrations\202107262107235_testing.Designer.cs">
+      <DependentUpon>202107262107235_testing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107262107235_testing.resx">
+      <DependentUpon>202107262107235_testing.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
