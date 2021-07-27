@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinal.Models.ReviewModels
 {
-    class ReviewCreate
+    public class ReviewCreate
     {
     }
 }
