@@ -1,7 +1,7 @@
 ﻿using BlueBadgeFinal.Data.Entities;
 using BlueBadgeFinal.Models;
 using BlueBadgeFinal.Models.MovieModels;
-using BlueBadgeFinalProject.Models;
+using BlueBadgeFinalProject.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -10,7 +10,7 @@ namespace BlueBadgeFinal.Models.ReviewModels
    public class ReviewDetail
     {
         public Guid UserId { get; set; }
-        public string MovieReview { get; set; }
+        public int MovieReview { get; set; }
         public string TheatreReview { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }

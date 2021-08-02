@@ -1,11 +1,12 @@
 namespace BlueBadgeFinal.Data.Migrations
 {
+    using BlueBadgeFinalProject.Data;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BlueBadgeFinalProject.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
     {
         public Configuration()
         {
@@ -13,7 +14,7 @@ namespace BlueBadgeFinal.Data.Migrations
             ContextKey = "BlueBadgeFinalProject.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(BlueBadgeFinalProject.Models.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

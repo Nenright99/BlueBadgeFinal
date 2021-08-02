@@ -28,14 +28,14 @@ namespace BlueBadgeFinalProject.Data
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<Rating> Ratings { get; set; }       
+        public DbSet<Rating> Ratings { get; set; }
         public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -64,7 +64,8 @@ namespace BlueBadgeFinalProject.Data
                 HasKey(iur => iur.UserId);
             }
         }
-        }
+    }
+}
 
 
 
