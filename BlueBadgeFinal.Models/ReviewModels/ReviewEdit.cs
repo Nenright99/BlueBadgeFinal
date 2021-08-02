@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinal.Models.ReviewModels
 {
-    class ReviewEdit
+   public class ReviewEdit
     {
+        public Guid UserId { get; set; }
+        public int MovieReview { get; set; }
+        public string TheatreReview { get; set; }
+        public int ReviewId { get; set; }
     }
 }
