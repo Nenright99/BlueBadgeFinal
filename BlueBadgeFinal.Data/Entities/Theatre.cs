@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinal.Data.Entities
 {
-    public class Theatre
+    public class Theatre  
     {
         [Key]
         public int ID { get; set; }

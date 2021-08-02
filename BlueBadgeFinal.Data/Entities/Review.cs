@@ -15,7 +15,8 @@ namespace BlueBadgeFinal.Data.Entities
         [ForeignKey(nameof(Movie))]
         public string MovieReview { get; set; }
         public virtual Movie Movie { get; set; }
-        [ForeignKey(nameof(Theatre))]
+
+        [ForeignKey(nameof(Theatre))]    
         public string TheatreReview { get; set; }
         public virtual Theatre Theatre { get; set; }
 

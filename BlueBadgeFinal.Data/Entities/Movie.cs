@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinal.Data.Entities
 {
-    public enum GenreType
+
+    public enum GenreType 
     {
         Horror = 1,
         RomCom,
