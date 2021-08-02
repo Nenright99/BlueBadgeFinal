@@ -9,7 +9,6 @@ C:\Users\NATEA\OneDrive\Desktop\C#Classwork\Projects\BlueBadgeFinal\BlueBadgeFin
 C:\Users\NATEA\OneDrive\Desktop\C#Classwork\Projects\BlueBadgeFinal\BlueBadgeFinal.Models\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\NATEA\OneDrive\Desktop\C#Classwork\Projects\BlueBadgeFinal\BlueBadgeFinal.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\NATEA\OneDrive\Desktop\C#Classwork\Projects\BlueBadgeFinal\BlueBadgeFinal.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\NATEA\OneDrive\Desktop\C#Classwork\Projects\BlueBadgeFinal\BlueBadgeFinal.Models\obj\Debug\BlueBadgeFinal.Models.csproj.AssemblyReference.cache
 C:\Users\NATEA\OneDrive\Desktop\C#Classwork\Projects\BlueBadgeFinal\BlueBadgeFinal.Models\obj\Debug\BlueBadgeFinal.Models.csproj.CoreCompileInputs.cache
 C:\Users\NATEA\OneDrive\Desktop\C#Classwork\Projects\BlueBadgeFinal\BlueBadgeFinal.Models\obj\Debug\BlueBadgeFinal.Models.csproj.CopyComplete
 C:\Users\NATEA\OneDrive\Desktop\C#Classwork\Projects\BlueBadgeFinal\BlueBadgeFinal.Models\obj\Debug\BlueBadgeFinal.Models.dll
