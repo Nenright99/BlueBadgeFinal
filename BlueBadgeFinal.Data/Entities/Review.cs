@@ -13,9 +13,10 @@ namespace BlueBadgeFinal.Data.Entities
         [Key]
         public Guid UserId { get; set; }
         [ForeignKey(nameof(Movie))]
-        public string MovieReview { get; set; }
+        public int MovieReview { get; set; }
         public virtual Movie Movie { get; set; }
-         [ForeignKey(nameof(Theatre))]
+
+        //[ForeignKey(nameof(Theatre))]    
         public string TheatreReview { get; set; }
         public virtual Theatre Theatre { get; set; }
 

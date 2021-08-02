@@ -6,6 +6,7 @@ using Microsoft.Owin;
 using BlueBadgeFinalProject.Models;
 using BlueBadgeFinalProject.Data;
 
+
 namespace BlueBadgeFinalProject
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
