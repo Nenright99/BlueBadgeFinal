@@ -23,6 +23,10 @@ namespace BlueBadgeFinal.Service
                 new Movie()
                 {
                     Title = model.Title,
+                    TypeOfGenres= model.TypeOfGenres,
+                    Release = model.Release,
+                    Maturity= model.Maturity,
+                   TheaterId = model.TheaterId
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -144,4 +148,4 @@ namespace BlueBadgeFinal.Service
 
     }
 }
-}
+

@@ -39,7 +39,7 @@ namespace BlueBadgeFinal.Data.Entities
         public MaturityRating Maturity { get; set; }
 
         [ForeignKey(nameof(Theatre))]
-        public int Id { get; set; }
+        public int TheaterId { get; set; }
         public virtual Theatre Theatre { get; set; }
 
         //public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();

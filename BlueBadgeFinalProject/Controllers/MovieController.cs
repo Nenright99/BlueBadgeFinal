@@ -35,12 +35,15 @@ namespace BlueBadgeFinalProject.Controllers
                 return InternalServerError();
             return Ok();
         }
+        [ActionName("GetMovieById")]
         public IHttpActionResult GetMovieById(int id)
         {
+            
             MovieService movieService = CreateMovieService();
             var movie = movieService.GetMovieById(id);
             return Ok(movie);
         }
+        [ActionName("GetMovieByRelease")]
         public IHttpActionResult GetMovieByRelease(DateTime release)
         {
             MovieService movieService = CreateMovieService();
@@ -48,6 +51,7 @@ namespace BlueBadgeFinalProject.Controllers
             return Ok(movie);
 
         }
+        [ActionName("GetMovieByRunTime")]
         public IHttpActionResult GetMovieByRunTime(int runtime)
         {
             MovieService movieService = CreateMovieService();

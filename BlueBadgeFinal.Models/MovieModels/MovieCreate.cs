@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlueBadgeFinal.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,5 +12,9 @@ namespace BlueBadgeFinal.Models
     {
         [Required]
         public string Title { get; set; }
+        public GenreType TypeOfGenres { get; set; }
+        public DateTime Release { get; set; }
+        public MaturityRating Maturity { get; set; }
+        public int TheaterId { get; set; }
     }
 }

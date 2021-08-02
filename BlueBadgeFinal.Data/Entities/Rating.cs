@@ -21,13 +21,13 @@ namespace BlueBadgeFinal.Data.Entities
         public Guid AuthorId { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
+
         [ForeignKey(nameof(Movie))]
-        public int RatId { get; set; }
-        //Navigation Property
+        public int RatId { get; set; }        
         public virtual Movie Movie { get; set; }
 
-        [ForeignKey(nameof(Theater))]
-        public int TheatId { get; set; }       
-        public virtual Theatre Theater { get; set; }
+        //[ForeignKey(nameof(Theater))]
+        //public int TheatId { get; set; }       
+        //public virtual Theatre Theater { get; set; }
     }
 }

@@ -308,6 +308,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BlueBadgeFinal.Data\BlueBadgeFinal.Data.csproj">
+      <Project>{48bc8473-ea2a-47ba-a318-f23da2b8111c}</Project>
+      <Name>BlueBadgeFinal.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BlueBadgeFinal.Models\BlueBadgeFinal.Models.csproj">
       <Project>{D4D104BC-3F91-4C00-8E72-AD84F51EE2A4}</Project>
       <Name>BlueBadgeFinal.Models</Name>

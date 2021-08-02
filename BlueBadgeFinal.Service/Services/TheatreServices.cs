@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinal.Service
 {
-    class TheatreServices
+    public class TheatreServices
     {
     }
 }
