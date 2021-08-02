@@ -9,9 +9,9 @@ namespace BlueBadgeFinal.Models.TheatreModels
 {
     public class TheatreCreate
     {
-        public Guid AdminID { get; set; }
         [Required]
-        public int TheatreID { get; set; }
-        
+        public string Name { get; set; }
+        [Required]
+        public string Address { get; set; }
     }
 }
