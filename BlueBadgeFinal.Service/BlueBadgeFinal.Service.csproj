@@ -64,5 +64,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlueBadgeFinal.Data\BlueBadgeFinal.Data.csproj">
+      <Project>{48BC8473-EA2A-47BA-A318-F23DA2B8111C}</Project>
+      <Name>BlueBadgeFinal.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlueBadgeFinal.Models\BlueBadgeFinal.Models.csproj">
+      <Project>{D4D104BC-3F91-4C00-8E72-AD84F51EE2A4}</Project>
+      <Name>BlueBadgeFinal.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
