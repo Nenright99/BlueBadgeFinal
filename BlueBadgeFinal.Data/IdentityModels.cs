@@ -33,7 +33,11 @@ namespace BlueBadgeFinalProject.Data
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Rating> Ratings { get; set; }       
         public DbSet<Review> Reviews { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -41,23 +45,27 @@ namespace BlueBadgeFinalProject.Data
                 .Remove<PluralizingTableNameConvention>();
 
             modelBuilder
-                .Configurations
-                .Add(new IdentityUserLoginConfiguration())
-                .Add(new IdentityUserRoleConfiguration());
+            .Configurations
+            .Add(new IdentityUserLoginConfiguration())
+            .Add(new IdentityUserRoleConfiguration());
         }
-    }
-    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
-    {
-        public IdentityUserLoginConfiguration()
+        public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
         {
-            HasKey(iul => iul.UserId);
+            public IdentityUserLoginConfiguration()
+            {
+                HasKey(iul => iul.UserId);
+            }
+
         }
-    }
-    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
-    {
-        public IdentityUserRoleConfiguration()
+        public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
         {
-            HasKey(iur => iur.UserId);
+            public IdentityUserRoleConfiguration()
+            {
+                HasKey(iur => iur.UserId);
+            }
         }
-    }
-}
+        }
+
+
+
+           
