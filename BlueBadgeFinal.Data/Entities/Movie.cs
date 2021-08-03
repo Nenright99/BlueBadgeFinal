@@ -43,8 +43,8 @@ namespace BlueBadgeFinal.Data.Entities
         public int TheaterId { get; set; }
         public virtual Theatre Theatre { get; set; }
 
-        //public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
+        public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
 
-        //public virtual ICollection<Review> Reviews { get; set; } = new List<Review>(); 
+        public virtual ICollection<Review> Reviews { get; set; } = new List<Review>(); 
     }
 }

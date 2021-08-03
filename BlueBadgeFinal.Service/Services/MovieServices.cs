@@ -35,6 +35,26 @@ namespace BlueBadgeFinal.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+        public IEnumerable<MovieListItem> GetMovies()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                ctx
+                .Movies                
+                .Select(
+                e =>
+                new MovieListItem
+                {
+                    ID = e.ID,
+                    Title = e.Title,
+                    TypeOfGenres = e.TypeOfGenres,
+                    Description = e.Description
+                }
+            );
+                return query.ToArray();
+            }
+        }
         public IEnumerable<MovieListItem> GetMovies(string title)
         {
             using (var ctx = new ApplicationDbContext())
