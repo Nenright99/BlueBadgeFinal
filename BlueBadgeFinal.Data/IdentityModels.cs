@@ -37,6 +37,7 @@ namespace BlueBadgeFinalProject.Data
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Theatre> Theatres { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
