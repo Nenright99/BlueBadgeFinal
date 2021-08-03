@@ -11,19 +11,21 @@ namespace BlueBadgeFinal.Data.Entities
    public class Review
     {
         [Key]
+        public int ReviewId { get; set; }
         public Guid UserId { get; set; }
-        [ForeignKey(nameof(Movie))]
-        public int MovieReview { get; set; }
-        public virtual Movie Movie { get; set; }
-
-        //[ForeignKey(nameof(Theatre))]    
         public string TheatreReview { get; set; }
-        public virtual Theatre Theatre { get; set; }
-
+        public string MovieReview { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
-        public int ReviewId { get; set; }
+        [ForeignKey(nameof(Theatre))]    
+        public int? TheatreID { get; set; }
+        public virtual Theatre Theatre { get; set; }
+
+        [ForeignKey(nameof(Movie))]
+        public int? ID { get; set; }
+        public virtual Movie Movie { get; set; }
+
     }
 }

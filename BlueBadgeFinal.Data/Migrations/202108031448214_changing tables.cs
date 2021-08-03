@@ -3,7 +3,7 @@ namespace BlueBadgeFinal.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class changingtables : DbMigration
     {
         public override void Up()
         {
@@ -26,16 +26,6 @@ namespace BlueBadgeFinal.Data.Migrations
                 .Index(t => t.TheaterId);
             
             CreateTable(
-                "dbo.Theatre",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false),
-                        Address = c.String(),
-                    })
-                .PrimaryKey(t => t.ID);
-            
-            CreateTable(
                 "dbo.Rating",
                 c => new
                     {
@@ -50,6 +40,37 @@ namespace BlueBadgeFinal.Data.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Movie", t => t.RatId, cascadeDelete: true)
                 .Index(t => t.RatId);
+            
+            CreateTable(
+                "dbo.Review",
+                c => new
+                    {
+                        ReviewId = c.Int(nullable: false, identity: true),
+                        UserId = c.Guid(nullable: false),
+                        TheatreReview = c.String(),
+                        MovieReview = c.String(),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                        TheatreID = c.Int(),
+                        ID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ReviewId)
+                .ForeignKey("dbo.Movie", t => t.ID, cascadeDelete: true)
+                .ForeignKey("dbo.Theatre", t => t.TheatreID)
+                .Index(t => t.TheatreID)
+                .Index(t => t.ID);
+            
+            CreateTable(
+                "dbo.Theatre",
+                c => new
+                    {
+                        TheatreID = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        Address = c.String(nullable: false),
+                        CreatedUTC = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUTC = c.DateTimeOffset(precision: 7),
+                    })
+                .PrimaryKey(t => t.TheatreID);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -129,12 +150,16 @@ namespace BlueBadgeFinal.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Rating", "RatId", "dbo.Movie");
             DropForeignKey("dbo.Movie", "TheaterId", "dbo.Theatre");
+            DropForeignKey("dbo.Review", "TheatreID", "dbo.Theatre");
+            DropForeignKey("dbo.Review", "ID", "dbo.Movie");
+            DropForeignKey("dbo.Rating", "RatId", "dbo.Movie");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Review", new[] { "ID" });
+            DropIndex("dbo.Review", new[] { "TheatreID" });
             DropIndex("dbo.Rating", new[] { "RatId" });
             DropIndex("dbo.Movie", new[] { "TheaterId" });
             DropTable("dbo.IdentityUserLogin");
@@ -142,8 +167,9 @@ namespace BlueBadgeFinal.Data.Migrations
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Rating");
             DropTable("dbo.Theatre");
+            DropTable("dbo.Review");
+            DropTable("dbo.Rating");
             DropTable("dbo.Movie");
         }
     }

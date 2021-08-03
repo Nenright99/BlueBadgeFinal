@@ -7,13 +7,13 @@ namespace BlueBadgeFinal.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class changingtables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changingtables));
         
         string IMigrationMetadata.Id
         {
-            get { return "202108021441034_Initial Migration"; }
+            get { return "202108031448214_changing tables"; }
         }
         
         string IMigrationMetadata.Source

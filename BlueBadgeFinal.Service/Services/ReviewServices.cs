@@ -22,7 +22,8 @@ namespace BlueBadgeFinal.Service
                 UserId = _userId,
                 TheatreReview = model.TheatreReview,
                 MovieReview=model.MovieReview,
-
+                TheatreID=model.TheatreID,
+                ID=model.ID
             };
             using (var ctx = new ApplicationDbContext())
             {
