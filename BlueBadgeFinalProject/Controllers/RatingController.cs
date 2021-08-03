@@ -1,6 +1,7 @@
-﻿using BlueBadgeFinal.Models.RatingModels;
-using BlueBadgeFinal.Service;
+﻿using BlueBadgeFinal.Service;
 using Microsoft.AspNet.Identity;
+using MovieRater.Models;
+using MovieRater.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

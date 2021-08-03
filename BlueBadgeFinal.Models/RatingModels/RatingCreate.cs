@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieRater.Models
 {
-    public class RatingsCreate
+    public class RatingCreate
     {
 
         public double MovieRating { get; set; }

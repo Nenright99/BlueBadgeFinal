@@ -18,7 +18,7 @@ namespace MovieRater.Services
         {
             _userId = userId;
         }
-        public bool CreateRating(RatingsCreate model)
+        public bool CreateRating(RatingCreate model)
         {
             var entity =
                 new Rating()
