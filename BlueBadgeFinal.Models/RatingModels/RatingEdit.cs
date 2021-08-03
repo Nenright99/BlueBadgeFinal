@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlueBadgeFinal.Models.RatingModels
+namespace MovieRater.Models
 {
-    class RatingEdit
+    public class RatingEdit
     {
+        public int Id { get; set; }
+        public double MovieRating { get; set; }
+        public double TheaterRating { get; set; }
+
     }
 }

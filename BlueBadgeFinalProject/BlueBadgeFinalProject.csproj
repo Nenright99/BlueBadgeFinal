@@ -209,6 +209,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
+    <Compile Include="Controllers\TheatreController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -312,14 +313,6 @@
     <ProjectReference Include="..\BlueBadgeFinal.Data\BlueBadgeFinal.Data.csproj">
       <Project>{48BC8473-EA2A-47BA-A318-F23DA2B8111C}</Project>
       <Name>BlueBadgeFinal.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BlueBadgeFinal.Models\BlueBadgeFinal.Models.csproj">
-      <Project>{D4D104BC-3F91-4C00-8E72-AD84F51EE2A4}</Project>
-      <Name>BlueBadgeFinal.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BlueBadgeFinal.Service\BlueBadgeFinal.Service.csproj">
-      <Project>{77D35059-424A-4E81-8FD5-22CB1FAAE6B9}</Project>
-      <Name>BlueBadgeFinal.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
