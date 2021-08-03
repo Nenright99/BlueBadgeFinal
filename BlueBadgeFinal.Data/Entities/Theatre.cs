@@ -10,11 +10,15 @@ namespace BlueBadgeFinal.Data.Entities
     public class Theatre  
     {
         [Key]
-        public int ID { get; set; }
+        public int TheatreID { get; set; }
         [Required]
         public string Name { get; set; }
-        public string Address { get; set; }           
-        public virtual ICollection<Movie> Movie { get; set; }
+        [Required]
+        public string Address { get; set; }
+        [Required]
+        public DateTimeOffset CreatedUTC { get; set; }
+        public DateTimeOffset? ModifiedUTC { get; set; }
+        //public virtual ICollection<Movie> Movie { get; set; }
         
     }
 }
