@@ -20,6 +20,12 @@ namespace BlueBadgeFinalProject.Controllers
             var movieService = new MovieService(userId);
             return movieService;
         }
+        public IHttpActionResult GetMovies()
+        {
+            MovieService movieService = CreateMovieService();
+            var movies = movieService.GetMovies();
+            return Ok(movies);
+        }
         public IHttpActionResult GetMovies(string title)
         {
             MovieService movieService = CreateMovieService();

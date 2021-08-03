@@ -12,6 +12,7 @@ using System.Text;
 namespace MovieRater.Services
 {
     public class RatingService
+
     {
         private readonly Guid _userId;
         public RatingService(Guid userId)
