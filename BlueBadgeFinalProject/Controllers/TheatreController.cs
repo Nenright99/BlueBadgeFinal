@@ -37,6 +37,29 @@ namespace BlueBadgeFinalProject.Controllers
             var theatreService = new TheatreService(userId);
             return theatreService;
         }
+        public IHttpActionResult Get(int id)
+        {
+            TheatreService theatreService = CreateTheatreService();
+            var theatre = theatreService.GetTheatreById(id);
+            return Ok(theatre);
+        }
+        public IHttpActionResult Put(TheatreEdit theatre)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            var service = CreateTheatreService();
+            if (!service.UpdateTheatre(theatre))
+                return InternalServerError();
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateTheatreService();
+            if (!service.DeleteTheatre(id))
+                return InternalServerError();
+            return Ok();
+        }
 
     }
 }

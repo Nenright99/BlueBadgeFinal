@@ -51,5 +51,51 @@ namespace BlueBadgeFinal.Service
                 return query.ToArray();
             }
         }
+        public TheatreDetail GetTheatreById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Theatres
+                        .Single(e => e.TheatreID == id);
+                return
+                    new TheatreDetail
+                    {
+                        TheatreID = entity.TheatreID,
+                        Name = entity.Name,
+                        Address = entity.Address,
+                        CreatedUTC = entity.CreatedUTC,
+                        ModifiedUTC = entity.ModifiedUTC
+                    };
+            }
+        }
+        public bool UpdateTheatre(TheatreEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Theatres
+                        .Single(e => e.TheatreID == model.TheatreID);
+                entity.Name = model.Name;
+                entity.Address = model.Address;
+                entity.ModifiedUTC = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteTheatre(int theatreId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Theatres
+                        .Single(e => e.TheatreID == theatreId);
+                ctx.Theatres.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BlueBadgeFinal.Models.TheatreModels
 {
-    class TheatreEdit
+    public class TheatreEdit
     {
+        public int TheatreID { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
     }
 }
