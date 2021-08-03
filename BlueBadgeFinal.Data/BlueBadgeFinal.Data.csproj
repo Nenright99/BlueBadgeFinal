@@ -97,6 +97,10 @@
     <Compile Include="Migrations\202108031501023_updated database.Designer.cs">
       <DependentUpon>202108031501023_updated database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108031726407_update Movie Database.cs" />
+    <Compile Include="Migrations\202108031726407_update Movie Database.Designer.cs">
+      <DependentUpon>202108031726407_update Movie Database.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108031501023_updated database.resx">
       <DependentUpon>202108031501023_updated database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108031726407_update Movie Database.resx">
+      <DependentUpon>202108031726407_update Movie Database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

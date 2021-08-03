@@ -13,12 +13,7 @@ namespace BlueBadgeFinalProject.Controllers
     [Authorize]
     public class TheatreController : ApiController
     {
-        public IHttpActionResult Get(string name)
-        {
-            TheatreService theatreService = CreateTheatreService();
-            var theatres = theatreService.GetTheatres(name);
-            return Ok(theatres);
-        }
+       
         public IHttpActionResult Post(TheatreCreate theatre)
         {
             if (!ModelState.IsValid)
