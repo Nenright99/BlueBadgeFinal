@@ -26,13 +26,13 @@ namespace BlueBadgeFinal.Service
                     TypeOfGenres= model.TypeOfGenres,
                     Release = model.Release,
                     Maturity= model.Maturity,
-                   TheaterId = model.TheaterId
+                   TheatreID = model.TheaterId
 
                 };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Movies.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() >= 1;
             }
         }
         public IEnumerable<MovieListItem> GetMovies(string title)
@@ -130,6 +130,7 @@ namespace BlueBadgeFinal.Service
                         .Single(e => e.ID == model.ID);
                 entity.Title = model.Title;
                 entity.Actors = model.Actors;
+                entity.TheatreID = model.TheaterID;
                 return ctx.SaveChanges() == 1;
             }
         }

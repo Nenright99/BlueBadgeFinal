@@ -89,17 +89,9 @@
     <Compile Include="Entities\Review.cs" />
     <Compile Include="Entities\Theatre.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202108031448214_changing tables.cs" />
-    <Compile Include="Migrations\202108031448214_changing tables.Designer.cs">
-      <DependentUpon>202108031448214_changing tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108031501023_updated database.cs" />
-    <Compile Include="Migrations\202108031501023_updated database.Designer.cs">
-      <DependentUpon>202108031501023_updated database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108031726407_update Movie Database.cs" />
-    <Compile Include="Migrations\202108031726407_update Movie Database.Designer.cs">
-      <DependentUpon>202108031726407_update Movie Database.cs</DependentUpon>
+    <Compile Include="Migrations\202108031941319_vs 4.cs" />
+    <Compile Include="Migrations\202108031941319_vs 4.Designer.cs">
+      <DependentUpon>202108031941319_vs 4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,14 +101,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202108031448214_changing tables.resx">
-      <DependentUpon>202108031448214_changing tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108031501023_updated database.resx">
-      <DependentUpon>202108031501023_updated database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108031726407_update Movie Database.resx">
-      <DependentUpon>202108031726407_update Movie Database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108031941319_vs 4.resx">
+      <DependentUpon>202108031941319_vs 4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

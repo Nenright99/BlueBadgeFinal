@@ -8,6 +8,7 @@ namespace BlueBadgeFinal.Models.MovieModels
 {
     public class MovieEdit
     {
+        public int TheaterID { get; set; }
         public int ID { get; set; }
         public string Title { get; set; }
         public string Actors { get; set; }

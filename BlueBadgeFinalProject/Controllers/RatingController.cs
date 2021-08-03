@@ -21,7 +21,7 @@ namespace BlueBadgeFinalProject.Controllers
             return ratingService;
         }
 
-        public IHttpActionResult GetRating()
+        public IHttpActionResult Get()
         {
             RatingService ratingService = CreateRatingService();
             var rating = ratingService.GetRating();

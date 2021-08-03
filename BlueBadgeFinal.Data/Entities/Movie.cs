@@ -39,12 +39,10 @@ namespace BlueBadgeFinal.Data.Entities
         public DateTime Release { get; set; }
         public MaturityRating Maturity { get; set; }
 
-        [ForeignKey(nameof(Theatre))]
-        public int? TheaterId { get; set; }
+        [ForeignKey("Theatre")]
+        public int? TheatreID { get; set; }
         public virtual Theatre Theatre { get; set; }
-
-        public virtual ICollection<Rating> Ratings { get; set; } = new List<Rating>();
-
-        public virtual ICollection<Review> Reviews { get; set; } = new List<Review>(); 
     }
 }
+
+        

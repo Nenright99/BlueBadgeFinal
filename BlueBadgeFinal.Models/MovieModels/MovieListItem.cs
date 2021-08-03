@@ -14,5 +14,6 @@ namespace BlueBadgeFinal.Models.MovieModels
         public string Description { get; set; }
         public GenreType TypeOfGenres { get; set; }
         public string Actors { get; set; }
+        public int TheatreID { get; set; }
     }
 }

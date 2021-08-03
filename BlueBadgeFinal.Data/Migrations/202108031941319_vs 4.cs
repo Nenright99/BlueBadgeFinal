@@ -3,7 +3,7 @@ namespace BlueBadgeFinal.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class changingtables : DbMigration
+    public partial class vs4 : DbMigration
     {
         public override void Up()
         {
@@ -19,46 +19,11 @@ namespace BlueBadgeFinal.Data.Migrations
                         Actors = c.String(),
                         Release = c.DateTime(nullable: false),
                         Maturity = c.Int(nullable: false),
-                        TheaterId = c.Int(nullable: false),
+                        TheatreID = c.Int(),
                     })
                 .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Theatre", t => t.TheaterId, cascadeDelete: true)
-                .Index(t => t.TheaterId);
-            
-            CreateTable(
-                "dbo.Rating",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        MovieRating = c.Double(nullable: false),
-                        TheaterRating = c.Double(nullable: false),
-                        AuthorId = c.Guid(nullable: false),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
-                        RatId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Movie", t => t.RatId, cascadeDelete: true)
-                .Index(t => t.RatId);
-            
-            CreateTable(
-                "dbo.Review",
-                c => new
-                    {
-                        ReviewId = c.Int(nullable: false, identity: true),
-                        UserId = c.Guid(nullable: false),
-                        TheatreReview = c.String(),
-                        MovieReview = c.String(),
-                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(precision: 7),
-                        TheatreID = c.Int(),
-                        ID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.ReviewId)
-                .ForeignKey("dbo.Movie", t => t.ID, cascadeDelete: true)
                 .ForeignKey("dbo.Theatre", t => t.TheatreID)
-                .Index(t => t.TheatreID)
-                .Index(t => t.ID);
+                .Index(t => t.TheatreID);
             
             CreateTable(
                 "dbo.Theatre",
@@ -71,6 +36,44 @@ namespace BlueBadgeFinal.Data.Migrations
                         ModifiedUTC = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.TheatreID);
+            
+            CreateTable(
+                "dbo.Rating",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        MovieRating = c.Double(nullable: false),
+                        TheaterRating = c.Double(nullable: false),
+                        AuthorId = c.Guid(nullable: false),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                        MovieID = c.Int(),
+                        TheatreID = c.Int(),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Movie", t => t.MovieID)
+                .ForeignKey("dbo.Theatre", t => t.TheatreID)
+                .Index(t => t.MovieID)
+                .Index(t => t.TheatreID);
+            
+            CreateTable(
+                "dbo.Review",
+                c => new
+                    {
+                        ReviewId = c.Int(nullable: false, identity: true),
+                        UserId = c.Guid(nullable: false),
+                        TheatreReview = c.String(),
+                        MovieReview = c.String(),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                        TheatreID = c.Int(),
+                        ID = c.Int(),
+                    })
+                .PrimaryKey(t => t.ReviewId)
+                .ForeignKey("dbo.Movie", t => t.ID)
+                .ForeignKey("dbo.Theatre", t => t.TheatreID)
+                .Index(t => t.TheatreID)
+                .Index(t => t.ID);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -150,26 +153,28 @@ namespace BlueBadgeFinal.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Movie", "TheaterId", "dbo.Theatre");
             DropForeignKey("dbo.Review", "TheatreID", "dbo.Theatre");
             DropForeignKey("dbo.Review", "ID", "dbo.Movie");
-            DropForeignKey("dbo.Rating", "RatId", "dbo.Movie");
+            DropForeignKey("dbo.Rating", "TheatreID", "dbo.Theatre");
+            DropForeignKey("dbo.Rating", "MovieID", "dbo.Movie");
+            DropForeignKey("dbo.Movie", "TheatreID", "dbo.Theatre");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.Review", new[] { "ID" });
             DropIndex("dbo.Review", new[] { "TheatreID" });
-            DropIndex("dbo.Rating", new[] { "RatId" });
-            DropIndex("dbo.Movie", new[] { "TheaterId" });
+            DropIndex("dbo.Rating", new[] { "TheatreID" });
+            DropIndex("dbo.Rating", new[] { "MovieID" });
+            DropIndex("dbo.Movie", new[] { "TheatreID" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Theatre");
             DropTable("dbo.Review");
             DropTable("dbo.Rating");
+            DropTable("dbo.Theatre");
             DropTable("dbo.Movie");
         }
     }

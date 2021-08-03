@@ -9,7 +9,7 @@ namespace MovieRater.Models
 {
     public class RatingDetail
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public double MovieRating { get; set; }
         public double TheaterRating { get; set; }
         public Guid AuthorId { get; set; }

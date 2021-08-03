@@ -8,7 +8,7 @@ namespace MovieRater.Models
 {
     public class RatingEdit
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public double MovieRating { get; set; }
         public double TheaterRating { get; set; }
 

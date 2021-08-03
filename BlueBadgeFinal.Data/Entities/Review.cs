@@ -16,14 +16,14 @@ namespace BlueBadgeFinal.Data.Entities
         public string TheatreReview { get; set; }
         public string MovieReview { get; set; }
 
-        [Required]
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
-        [ForeignKey(nameof(Theatre))]    
+       
+        [ForeignKey("Theatre")]    
         public int? TheatreID { get; set; }
         public virtual Theatre Theatre { get; set; }
 
-        [ForeignKey(nameof(Movie))]
+        [ForeignKey("Movie")]
         public int? ID { get; set; }
         public virtual Movie Movie { get; set; }
 

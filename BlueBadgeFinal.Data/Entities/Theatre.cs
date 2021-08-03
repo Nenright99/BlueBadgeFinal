@@ -18,7 +18,7 @@ namespace BlueBadgeFinal.Data.Entities
         [Required]
         public DateTimeOffset CreatedUTC { get; set; }
         public DateTimeOffset? ModifiedUTC { get; set; }
-        public virtual ICollection<Movie> Movie { get; set; }
+        //public virtual ICollection<Movie> Movie { get; set; } = new List<Movie>();
         
     }
 }

@@ -60,11 +60,11 @@ namespace MovieRater.Services
                 var entity =
                     ctx
                         .Ratings
-                        .Single(e => e.Id == id && e.AuthorId == _userId);
+                        .Single(e => e.ID == id && e.AuthorId == _userId);
                 return
                     new RatingDetail
                     {
-                        Id = entity.Id,
+                        ID = entity.ID,
                         MovieRating = entity.MovieRating,
                         TheaterRating = entity.TheaterRating,
                         CreatedUtc = entity.CreatedUtc,
@@ -83,7 +83,7 @@ namespace MovieRater.Services
                 return
                     new RatingDetail
                     {
-                        Id = entity.Id,
+                        ID = entity.ID,
                         AuthorId = entity.AuthorId,
                         MovieRating = entity.MovieRating,
                         TheaterRating = entity.TheaterRating,
@@ -99,21 +99,21 @@ namespace MovieRater.Services
                 var entity =
                     ctx
                         .Ratings
-                        .Single(e => e.Id == model.Id && e.AuthorId == _userId);
+                        .Single(e => e.ID == model.ID && e.AuthorId == _userId);
                 entity.MovieRating = model.MovieRating;
                 entity.TheaterRating = model.TheaterRating;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteRating(int Id)
+        public bool DeleteRating(int ID)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Ratings
-                        .Single(e => e.Id == Id && e.AuthorId == _userId);
+                        .Single(e => e.ID == ID && e.AuthorId == _userId);
                 ctx.Ratings.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

@@ -11,7 +11,7 @@ namespace BlueBadgeFinal.Data.Entities
     public class Rating
     {
         [Key]
-        public int Id { get; set; }
+        public int ID { get; set; }
         [Required]
         [Range(0, 10)]
         public double MovieRating { get; set; }
@@ -22,12 +22,12 @@ namespace BlueBadgeFinal.Data.Entities
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        [ForeignKey(nameof(Movie))]
-        public int RatId { get; set; }        
+        [ForeignKey("Movie")]
+        public int? MovieID { get; set; }        
         public virtual Movie Movie { get; set; }
 
-        //[ForeignKey(nameof(Theater))]
-        //public int TheatId { get; set; }       
-        //public virtual Theatre Theater { get; set; }
+        [ForeignKey("Theatre")]
+        public int? TheatreID { get; set; }       
+        public virtual Theatre Theatre { get; set; }
     }
 }
