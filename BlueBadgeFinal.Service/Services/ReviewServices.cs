@@ -4,6 +4,7 @@ using BlueBadgeFinalProject.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace BlueBadgeFinal.Service
 {
@@ -51,21 +52,21 @@ namespace BlueBadgeFinal.Service
                 return query.ToArray();
             }
         }
-        public ReviewDetail GetReviewById(Guid UserId)
+        public IEnumerable<ReviewDetail> GetReviewById(Guid UserId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Reviews
-                        .Single(e => e.UserId == _userId);
-                return
-                    new ReviewDetail
-                    {
-                        UserId = entity.UserId,
-                        TheatreReview = entity.TheatreReview,
-                        MovieReview=entity.MovieReview,
-                    };
+                        .Where(e => e.UserId == _userId)
+                        .Select(e => new ReviewDetail
+                        {
+                            UserId = e.UserId,
+                            TheatreReview = e.TheatreReview,
+                            MovieReview = e.MovieReview,
+                        });
+                return entity.ToArray();            
             }
         }
         public bool UpdateReview(ReviewEdit model)

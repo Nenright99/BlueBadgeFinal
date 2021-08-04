@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
 
 namespace BlueBadgeFinalProject.Controllers
 {
@@ -33,6 +32,7 @@ namespace BlueBadgeFinalProject.Controllers
                 return InternalServerError();
             return Ok();
         }
+        [Route("api/Review/{UserId}")]
         public IHttpActionResult Get(Guid UserId)
         {
             ReviewServices reviewService = CreateReviewService();
@@ -48,6 +48,7 @@ namespace BlueBadgeFinalProject.Controllers
                 return InternalServerError();
             return Ok();
         }
+        [Route("api/Review/{ReviewId}")]
         public IHttpActionResult Delete(int ReviewId)
         {
             var service = CreateReviewService();

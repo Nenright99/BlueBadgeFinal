@@ -8,6 +8,7 @@ namespace BlueBadgeFinal.Models.ReviewModels
 {
    public class ReviewListItem
     {
+        public int ReviewId { get; set; }
         public Guid UserId { get; set; }
         public string MovieReview { get; set; }
         public string TheatreReview { get; set; }
