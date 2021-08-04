@@ -75,10 +75,10 @@ namespace BlueBadgeFinal.Service
                 var entity =
                     ctx
                         .Reviews
-                        .Single(e => e.UserId == model.UserId && e.UserId == _userId);
+                        .First(e => e.UserId == model.UserId && e.UserId == _userId);
                 entity.TheatreReview = model.TheatreReview;
                 entity.MovieReview = model.MovieReview;
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() >= 1;
             }
         }
         public bool DeleteReview(int reviewId)

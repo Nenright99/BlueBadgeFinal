@@ -23,6 +23,7 @@ namespace MovieRater.Services
             var entity =
                 new Rating()
                 {
+                    AuthorId= _userId,
                     MovieRating = model.MovieRating,
                     TheaterRating = model.TheaterRating,
                     CreatedUtc = DateTimeOffset.Now
